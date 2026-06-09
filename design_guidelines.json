@@ -1,0 +1,121 @@
+{
+  "theme_and_archetype": {
+    "theme": "dark",
+    "archetype": "7 (Electric & Neon) - Refined",
+    "rationale": "App is a Deepfake Image & Video Detector ('TruePixel') requiring a futuristic, command-center aesthetic. We avoid pure blacks/whites to prevent eye strain, using deep void black with glassmorphism and targeted neon."
+  },
+  "typography": {
+    "primary_font": "Outfit",
+    "secondary_font": "JetBrains Mono",
+    "heading_styles": {
+      "h1": "text-4xl sm:text-5xl font-black tracking-tighter text-white",
+      "h2": "text-2xl sm:text-3xl font-bold tracking-tight text-white",
+      "h3": "text-xl sm:text-2xl font-semibold tracking-tight text-cyan-50"
+    },
+    "body_styles": {
+      "base": "text-base font-mono text-zinc-400 leading-relaxed",
+      "small": "text-sm font-mono text-zinc-500",
+      "overline": "text-xs font-mono uppercase tracking-[0.2em] text-cyan-400"
+    }
+  },
+  "colors": {
+    "background": {
+      "base": "#05050A",
+      "surface": "#090914",
+      "glass": "rgba(9, 9, 20, 0.4)"
+    },
+    "text": {
+      "primary": "#FFFFFF",
+      "secondary": "#A1A1AA",
+      "accent": "#00F0FF"
+    },
+    "brand": {
+      "primary": "#00F0FF",
+      "secondary": "#8B5CF6",
+      "tertiary": "#3B82F6"
+    },
+    "status": {
+      "fake": "#F43F5E",
+      "real": "#10B981"
+    }
+  },
+  "surface_strategies": {
+    "glassmorphism": "backdrop-blur-2xl bg-[#090914]/40 border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.3)]",
+    "tracing_beam": "relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:p-[1px] before:bg-gradient-to-r before:from-cyan-500/50 before:via-purple-500/50 before:to-transparent",
+    "neumorphism": "Not used for this archetype"
+  },
+  "layout_and_spacing": {
+    "grid_system": "Dashboard uses 'Control Room' dense grid: grid-cols-1 md:grid-cols-12 gap-6.",
+    "padding": "Generous internal padding for cards: p-6 or p-8.",
+    "sidebar": "w-64 fixed left-0 top-0 h-screen glassmorphism panel border-r border-white/10",
+    "main_content": "ml-64 p-8 min-h-screen"
+  },
+  "components_and_interactions": {
+    "buttons": "Shadcn Button heavily customized: rounded-lg font-mono font-medium tracking-wide transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,240,255,0.4)] hover:bg-cyan-500/20",
+    "cards": "Floating floating hover: -translate-y-1 transition-transform duration-300, glassmorphism surface.",
+    "animations": {
+      "floating": "framer-motion: y: [-5, 5, -5] with repeat: Infinity, duration: 4, ease: 'easeInOut'",
+      "page_transition": "framer-motion: initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}",
+      "pulse": "tailwind animate-pulse for processing states",
+      "parallax_hover": "Hover tilt with 3D perspective (rotateX, rotateY) on floating cards"
+    }
+  },
+  "pages": {
+    "login": "Centered floating glass card. Animated background particles (using tsparticles or framer-motion floating divs). Google Social Login button with glowing focus states. Subtle 3D depth layering.",
+    "dashboard": "Sidebar with navigation (Home, Upload, History, Settings). Main panel with floating 3D cards. Prominent Upload section with drag & drop and glowing border. Detection result panel showing confidence score and a Real vs Fake animated indicator (e.g., circular progress bar that turns red/green). Session history section with grid of thumbnails."
+  },
+  "media_and_assets": {
+    "logo_instructions": "Use lucide-react 'ScanFace' or 'Aperture' icon in cyber cyan (#00F0FF) paired with 'TruePixel' text in Outfit font.",
+    "image_urls": [
+      {
+        "category": "background",
+        "description": "Abstract glowing purple/green network for Login Page background",
+        "url": "https://images.unsplash.com/photo-1773429494448-1c13750ad80d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjBuZW9uJTIwbmV0d29ya3xlbnwwfHx8fDE3NzQ1NDUyMDN8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "background_alt",
+        "description": "Abstract purple lines for alternative areas",
+        "url": "https://images.unsplash.com/photo-1762278804798-dd7e493db051?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBuZW9uJTIwbmV0d29ya3xlbnwwfHx8fDE3NzQ1NDUyMDN8MA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "history_thumbnail_fake_1",
+        "description": "Glitch art face representing a deepfake detection",
+        "url": "https://images.unsplash.com/photo-1765445773880-d3c7a38cf341?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxnbGl0Y2glMjBhcnQlMjBmYWNlfGVufDB8fHx8MTc3NDU0NTIwMnww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "history_thumbnail_fake_2",
+        "description": "Another glitch art face for fake detection history",
+        "url": "https://images.unsplash.com/photo-1765410849364-56b49c81c657?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwxfHxnbGl0Y2glMjBhcnQlMjBmYWNlfGVufDB8fHx8MTc3NDU0NTIwMnww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "history_thumbnail_real",
+        "description": "Normal portrait for real detection history",
+        "url": "https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NDQ5OTA4Nnww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "category": "user_avatar",
+        "description": "Profile picture of the logged-in user",
+        "url": "https://images.unsplash.com/photo-1762522926157-bcc04bf0b10a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTF8MHwxfHNlYXJjaHw0fHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDB8fHx8MTc3NDQ5OTA4Nnww&ixlib=rb-4.1.0&q=85"
+      }
+    ]
+  },
+  "testing_attributes": {
+    "rules": "All interactive and key informational elements MUST include data-testid. Examples: data-testid='upload-dropzone', data-testid='analyze-button', data-testid='confidence-score'."
+  },
+  "library_recommendations": {
+    "icons": "lucide-react",
+    "animations": "framer-motion",
+    "3d_effects": "@tsparticles/react and tsparticles for background particles",
+    "charts": "recharts"
+  },
+  "instructions_to_main_agent": [
+    "Do NOT use pure black (#000000). Use #05050A for the main background to reduce eye strain and give a premium feel.",
+    "Implement the Login Page as a full-screen layout with a centered Glassmorphism card, using the provided background image with a dark overlay (bg-black/60).",
+    "Implement the Dashboard using a sidebar and main content area. Make sure grid items use col-span based on the 'Control Room' grid layout.",
+    "The 'Upload Zone' must have a dashed glowing border and drag-and-drop interactive hover states.",
+    "Use framer-motion for the Real vs Fake indicator. A glowing progress bar or circular ring that animates from 0 to the confidence score.",
+    "Ensure all fonts are imported via next/font or Google Fonts (Outfit for headings, JetBrains Mono for body).",
+    "Session history should just be a React state array with the mock thumbnail images provided.",
+    "Add 'data-testid' to all buttons, inputs, and major containers."
+  ]
+}

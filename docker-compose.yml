@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - CORS_ORIGINS=http://localhost:3000
+    volumes:
+      # Persist local database and local storage media on the host machine
+      - ./backend/storage_local:/app/storage_local
+      - ./backend/truepixel_local.db:/app/truepixel_local.db
+      # Persist huggingface model cache to prevent redownloads
+      - hf_cache:/root/.cache/huggingface
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_BACKEND_URL=http://localhost:8000
+    depends_on:
+      - backend
+    # Keep standard standard input open and attach a pseudo-TTY for React scripts
+    stdin_open: true
+    tty: true
+
+volumes:
+  hf_cache:
