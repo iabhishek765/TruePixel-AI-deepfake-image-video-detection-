@@ -1,5 +1,9 @@
 # TruePixel AI - Deepfake & Synthetic Image Detection
 
+> 🤝 This is a collaborative project built with my teammate 
+> [Arpit](https://github.com/Arpit-hue-max).
+> Original repo: [TruePixel AI](https://github.com/Arpit-hue-max/TruePixel-AI-deepfake-image-video-detection-)
+
 TruePixel AI is a premium web application designed to detect AI-generated, synthetic, and deepfaked images with high precision. It uses an **ensemble approach** combining a modern Swin Transformer model with a CNN-equivalent frequency-domain spectral analysis tool.
 
 ---
